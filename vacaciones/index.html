@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explora Ciudad de Panamá: tours, destinos y experiencias únicas.">
+    <title>Explora Panamá - Turismo</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- API de Google Maps -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=TU_CLAVE_API&libraries=places"></script>
+</head>
+
+<body>
+    <!-- Encabezado -->
+    <header>
+        <h1>Explora Ciudad de Panamá</h1>
+        <p>Planifica tu aventura con los mejores tours y experiencias</p>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#destinos">Destinos</a></li>
+                <li><a href="#tours">Tours</a></li>
+                <li><a href="#carrito">Carrito</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección de Carrusel -->
+    <section id="inicio" class="carrusel">
+        <div class="carrusel-interior">
+            <div class="carrusel-elemento activo">
+                <img src="https://via.placeholder.com/1200x400?text=Canal+de+Panamá" alt="Canal de Panamá">
+                <div class="carrusel-texto">
+                    <h2>Canal de Panamá</h2>
+                    <p>Descubre una maravilla de la ingeniería moderna.</p>
+                </div>
+            </div>
+            <div class="carrusel-elemento">
+                <img src="https://via.placeholder.com/1200x400?text=Casco+Antiguo" alt="Casco Antiguo">
+                <div class="carrusel-texto">
+                    <h2>Casco Antiguo</h2>
+                    <p>Recorre la historia y la cultura panameña.</p>
+                </div>
+            </div>
+            <div class="carrusel-elemento">
+                <img src="https://via.placeholder.com/1200x400?text=Biomuseo" alt="Biomuseo">
+                <div class="carrusel-texto">
+                    <h2>Biomuseo</h2>
+                    <p>Explora la biodiversidad de Panamá.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carrusel-control anterior">❮</button>
+        <button class="carrusel-control siguiente">❯</button>
+    </section>
+
+    <!-- Sección de Destinos -->
+    <section id="destinos" class="destinos">
+        <h2>Destinos Populares</h2>
+        <div class="destinos-cuadricula">
+            <div class="destino-tarjeta">
+                <img src="https://via.placeholder.com/300?text=Canal+de+Panamá" alt="Canal de Panamá">
+                <h3>Canal de Panamá</h3>
+                <p>Visita una de las maravillas del mundo moderno, con tours guiados y vistas espectaculares.</p>
+                <button class="anadir-al-plan">Añadir al Plan</button>
+            </div>
+            <div class="destino-tarjeta">
+                <img src="https://via.placeholder.com/300?text=Casco+Antiguo" alt="Casco Antiguo">
+                <h3>Casco Antiguo</h3>
+                <p>Calles empedradas, arquitectura colonial y una vibrante escena cultural.</p>
+                <button class="anadir-al-plan">Añadir al Plan</button>
+            </div>
+            <div class="destino-tarjeta">
+                <img src="https://via.placeholder.com/300?text=Biomuseo" alt="Biomuseo">
+                <h3>Biomuseo</h3>
+                <p>Un museo colorido diseñado por Frank Gehry, dedicado a la biodiversidad.</p>
+                <button class="anadir-al-plan">Añadir al Plan</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Mapa -->
+    <section id="mapa">
+        <h2>Mapa Interactivo</h2>
+        <div id="mapa" style="height: 400px;"></div>
+    </section>
+
+    <!-- Sección de Tours -->
+    <section id="tours" class="tours">
+        <h2>Tours Disponibles</h2>
+        <div class="tours-cuadricula">
+            <div class="tour-tarjeta">
+                <img src="https://via.placeholder.com/300?text=Tour+Histórico" alt="Tour Histórico">
+                <h3>Tour Histórico</h3>
+                <p>Recorre el Casco Antiguo y descubre la historia de Panamá. Duración: 3 horas. Precio: $50.</p>
+                <button class="anadir-al-carrito" data-nombre="Tour Histórico" data-precio="50">Añadir al
+                    Carrito</button>
+            </div>
+            <div class="tour-tarjeta">
+                <img src="https://via.placeholder.com/300?text=Tour+Canal" alt="Tour Canal">
+                <h3>Tour Canal de Panamá</h3>
+                <p>Explora el canal con un guía experto. Duración: 4 horas. Precio: $80.</p>
+                <button class="anadir-al-carrito" data-nombre="Tour Canal de Panamá" data-precio="80">Añadir al
+                    Carrito</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Carrito -->
+    <section id="carrito" class="carrito">
+        <h2>Carrito de Compras</h2>
+        <ul id="carrito-elementos"></ul>
+        <p>Total: $<span id="carrito-total">0</span></p>
+        <button id="proceder-pago">Proceder al Pago</button>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section id="contacto" class="contacto">
+        <h2>Contacto</h2>
+        <form id="formulario-contacto">
+            <input type="text" placeholder="Nombre" required>
+            <input type="email" placeholder="Correo Electrónico" required>
+            <textarea placeholder="Mensaje" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <!-- Pie de Página -->
+    <footer>
+        <p>© 2025 Explora Panamá. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
